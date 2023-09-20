@@ -17,6 +17,8 @@ const UseEffectBasics = () => {
     console.log('hello from useEffect');
   }, []);
 
+  //empty dependency array to render only on initial load
+
   return (
     <div>
       <h1>value : {value}</h1>
