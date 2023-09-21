@@ -12,6 +12,13 @@ const MultipleReturnsFetchData = () => {
     const fetchUser = async () => {
       try {
         const resp = await fetch(url);
+        //additonal handing for HTTP status codes in the 4xx or 5xx range
+        if (!resp.ok) {
+        setIsError(true);
+        setIsLoading(false);
+        return;
+        }
+        //below will run only if resp.ok is true 
         const user = await resp.json();
         console.log(user);
         setUser(user);
