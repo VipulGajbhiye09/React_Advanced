@@ -4,6 +4,7 @@ const MultipleEffects = () => {
   const [value, setValue] = useState(0);
   const [secondValue, setSecondValue] = useState(0);
 
+  // 2 distinct useEffect hooks manipulating 2 distinct react states
   useEffect(() => {
     console.log('hello from first useEffect');
   }, [value]);
