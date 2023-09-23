@@ -8,33 +8,26 @@ const MultipleReturnsFetchData = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const resp = await fetch(url);
-        //additonal handing for HTTP status codes in the 4xx or 5xx range
-        if (!resp.ok) {
-        setIsError(true);
-        setIsLoading(false);
-        return;
-        }
-        //below will run only if resp.ok is true 
-        const user = await resp.json();
-        console.log(user);
-        setUser(user);
-      } 
-      catch (error) {
-        setIsError(true)
-        console.log(error);
-      }
-      setIsLoading(false) //as loading is complete
-    };
+ const fetchUser = async () => {
+    try {
+      const resp = await fetch(url);
+      const user = await resp.json();
+      // const { avatar_url, name, company, bio } = user;
+      console.log(user);
+      setUser(user);
+    } catch (error) {
+      setIsError(true);
+      console.log(error);
+    }
+    setIsLoading(false); //as loading is complete
+  };
 
+  useEffect(() => {
     fetchUser();
   }, []);
 
   // don't place user JSX before loading or error
-
+  
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
@@ -42,7 +35,7 @@ const MultipleReturnsFetchData = () => {
   if (isError) {
     return <h2>There was an error...</h2>;
   }
-  //destructure
+  //destructure properties
   const { avatar_url, name, company, bio } = user;
 
   return (
