@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
 const ShortCircuitOverview = () => {
-  // falsy
+  
+  // falsy due to null string
   const [text, setText] = useState('');
-  // truthy
-  const [name, setName] = useState('susan');
+  // truthy 
+  const [name, setName] = useState('vipul');
 
   const codeExample = text || 'hello world';
 
@@ -18,7 +19,10 @@ const ShortCircuitOverview = () => {
       <h4>Truthy OR {name || 'hello world'}</h4>
       <h4>Truthy AND {name && 'hello world'}</h4>
       {codeExample}
+      
     </div>
   );
 };
+
+
 export default ShortCircuitOverview;
