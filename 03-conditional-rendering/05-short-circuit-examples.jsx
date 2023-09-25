@@ -31,6 +31,17 @@ const ShortCircuitExamples = () => {
       returns 1st expression if true otherwise returns 2nd expression*/}
       <button className="btn">{isEditing ? "edit" : "add"}</button>
       
+      {/* toggle elements/components using ternary operator */}
+      {user ? (
+        <div>
+          <h4>hello user {user.name}</h4>
+        </div>
+      ) : (
+        <div>
+          <h2>please login</h2>
+        </div>
+      )}
+      
     </div>
   );
 };
