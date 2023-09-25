@@ -26,6 +26,10 @@ const ShortCircuitExamples = () => {
       {/* toggle component */}
       {user && <SomeComponent name={user.name} />}
       <h2> Toggle Component </h2>
+
+      {/*using ternary operator inside element 
+      returns 1st expression if true otherwise returns 2nd expression*/}
+      <button className="btn">{isEditing ? "edit" : "add"}</button>
       
     </div>
   );
