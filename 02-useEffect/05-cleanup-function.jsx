@@ -39,8 +39,21 @@ const RandomComponent=()=>{
 
   return <h1>Random Component Content</h1>
 }
+//Another cleanup example
+const RandomComponent=()=>{
 
+  useEffect(()=>{
+    const someFunc=()=>{
+      //logic
+    }
+    window.addEventListener('scroll',someFunc);
+    
+    //Cleanup return in useEffect
+    return () => { window.removeEventListener('scroll',someFunc) };
+  },[]);
 
+  return <h1>Random Component Content</h1>
+}
 
 
 export default CleanupFunction;
