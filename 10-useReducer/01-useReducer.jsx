@@ -1,3 +1,6 @@
+//The useReducer Hook is the better alternative to the useState hook and is generally more preferred over the useState hook when you have complex state-building logic 
+//or when the next state value depends upon its previous value or when the components are needed to be optimized.
+
 import { useState, useReducer } from 'react';
 import { data } from '../../../data';
 import { CLEAR_LIST, RESET_LIST, REMOVE_ITEM } from './actions';
