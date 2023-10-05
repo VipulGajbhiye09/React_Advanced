@@ -8,6 +8,8 @@ const Example = () => {
   const [people, setPeople] = useState(data);
   const [count, setCount] = useState(0);
 
+  //React.memo is a higher-order component (HOC) in React that allows you to memoize a component. This means that if the input props to the component have not changed,
+  //the memoized component will return the same result from the previous render, instead of re-rendering. This can help improve performance by avoiding unnecessary render cycles.
   const value = useMemo(() => slowFunction(), []);
   console.log(value);
 
